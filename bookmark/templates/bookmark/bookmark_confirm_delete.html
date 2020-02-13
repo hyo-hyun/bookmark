@@ -5,10 +5,17 @@
     <title>Title</title>
 </head>
 <body>
-<form action="" method="post">
+    {% extends 'base.html' %}
+
+    {% block title %}Confirm Delete{% endblock %}
+
+    {% block content %}
+    <form action="" method="post">
     {% csrf_token %}
     <div class="'alert alert-danger">Do you want to delete Bookmark "{{object}}"?</div>
     <input type="submit" value="Delete" class="btn btn-danger">
-</form>  <!--form 태그 안에는 무조건 csrf_token 이 같이 있어야함.-->
+    </form>  <!--form 태그 안에는 무조건 csrf_token 이 같이 있어야함.-->
+
+    {% endblock %}
 </body>
 </html>
